@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "ff48b86f-dc7a-42ef-b276-6c464eca514a",
+		"name": "iJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29060158"
+	},
+	"item": [
+		{
+			"name": "JWT authentication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MzI1NjM2MzUsImV4cCI6MTczMjU2NzIzNX0.qDs5CCaXW_eltH_o2ST4b5Gj4PjXyPMCzEHvM47Judk"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/protected"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify JWT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MzI1NjM2MzUsImV4cCI6MTczMjU2NzIzNX0.qDs5CCaXW_eltH_o2ST4b5Gj4PjXyPMCzEHvM47Judk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/verify"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/login"
+			},
+			"response": []
+		}
+	]
+}
